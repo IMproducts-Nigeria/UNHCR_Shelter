@@ -1,17 +1,18 @@
+
 <!DOCTYPE html>
 <!-- Sector Dashboard -->
 <html lang="en">
     <head>
-        <title>Shelter Response | North Easter Operation in Nigeria</title>
+        <title>Shelter Response | North East Operation in Nigeria</title>
         <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
         <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" name="viewport" />
         <meta content="UNHCR Information management" name="author" />
-        <meta content="UNHCR Maiduguri Nigeria" property="og:title" />
+        <meta content="UNHCR L3 Response in Nigeria" property="og:title" />
         <meta content="article" property="og:type" />
-        <meta content="http://data.unhcr.org/" property="og:url" />
-        <meta content="http://data.unhcr.org/" property="og:image" />
-        <meta content="UNHCR Maiduguri Nigeria" property="og:site_name" />
-        <meta content="UNHCR Maiduguri Nigeria" property="og:description" />
+        <meta content="http://data.unhcr.org/jordan/response/Protection" property="og:url" />
+        <meta content="http://data.unhcr.org/jordan/images/Protectiondashboard.jpg" property="og:image" />
+        <meta content="UNHCR L3 Response in Nigeria" property="og:site_name" />
+        <meta content="UNHCR L3 Response in Nigeria" property="og:description" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
         
         <!-- Bootstrap with Yeti them from bootswatch-->
@@ -24,8 +25,8 @@
         
         <!-- Add IntroJs styles and JS -->
         <link href="css/introjs.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" src="../../js/intro.js"></script>
-        <script type="text/javascript" src="../../js/monthlyReport.js"> </script>
+        <script type="text/javascript" src="js/intro.js"></script>
+        <script type="text/javascript" src="js/monthlyReport.js"> </script>
         <script src="js/jquery.js"></script>
         <!-- map the data to the GeoJSON object -->
         <script src="js/data-jo.js"></script>
@@ -50,7 +51,7 @@
                         '#ffc000', /* Shelter */
                         '#7030a0', /* WASH */
 
-                        Revised Color code for dashboard 2015
+                        Revised Color code for dashboard 2016
                         '#d44e5b', /* Education */
                         '#00b26b', /* Food Security */
                         '#58595b', /* basic needs */
@@ -68,8 +69,8 @@
                 </div>
                 <div class="col-md-7">
                    <!-- <center> </center> -->
-                        <h3><strong>Shelter Working Group | 2015 Syrian Refugee Response in Jordan
-                         | <a href="../../index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
+                        <h3><strong>Shelter Working Group | 2016 Syrian Refugee Response in Jordan
+                         | <a href="index.html"  target="_blank"><i class="icon-im-coord" style="color:white; font-size:20px;" ></i></a></strong></h3>
                         The data presented here are collected through the <a href="https://www.syrianrefugeeresponse.org/" target="_blank">Syrian Refugee Response</a> platform and then cleared by Sector focal points.
                         You can donwload the <a href="data.csv" target="_blank">data here</a>. More info on jordan <a href="http://data.unhcr.org/jordan" target="_blank">here</a>.<br />
                         <strong>The following charts shows the achievement of the Shelter sector. Click on any of the graphs below to filter and slice the data.</strong>
@@ -82,17 +83,17 @@
                               <tbody>
                                   <tr>
                                     <td valign="middle"><a href="http://www.facebook.com/sharer.php?u=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
-                                        <img src="../../img/Facebook.png" style="height: 25px; width: 25px"></a></td>
+                                        <img src="img/Facebook.png" style="height: 25px; width: 25px"></a></td>
                                     <td valign="middle"><a href="https://twitter.com/intent/tweet?url=http://data.unhcr.org/jordan/sectors/shelter&amp;text=%23jordan%20@Refugees" target="_blank">
-                                        <img src="../../img/Twitter.png" style="height: 25px; width: 25px"></a></td>
+                                        <img src="img/Twitter.png" style="height: 25px; width: 25px"></a></td>
                                     <td valign="middle"><a href="https://plus.google.com/share?&amp;hl=en&amp;url=http://data.unhcr.org/jordan/sectors/shelter" target="_blank">
-                                        <img src="../../img/Google.png" style="height: 25px; width: 25px"></a></td>
+                                        <img src="img/Google.png" style="height: 25px; width: 25px"></a></td>
                                   </tr>
                             </tbody></table><br>
                         </div>
                     </div>
                     <div class="row" >
-                        <p><b>Leading Agencies:</b> <i>UNHCR</i> <a href="mailto:abdelal@unhcr.org">Mohamed Abdel-Al</a> &
+                        <p><b>Leading Agencies:</b> <i>UNHCR</i> <a href="mailto:dupin@unhcr.org">Vincent Dupin</a> &
                         <i>NRC<i> <a href="mailto:annika.hampson@nrc.no">Annika Hampson</a></b></p>
                         <br>
                         <div class="dc-chart" id="count-info" data-step="12" data-intro="Click on this button to clear all the filters." data-position="right">
@@ -105,12 +106,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row" >
-                        <ul class="nav nav-tabs">
-                          <li class="active"><a href="#Overview" data-toggle="tab" aria-expanded="false">Sector Overview</a></li>
-                          <li class=""><a href="indexInd.html">View Per Indicator</a></li>
-                        </ul>            
-            </div>
+           
             <div class="row" >
                 <div class="tab-pane fade active in" id="Overview">
                     <div class="row">
@@ -215,9 +211,10 @@
                             <script type="text/javascript">
                                     var d = new Date();
                                     var n = d.getMonth();
-									n = 12; // Patch for 2015 12 Months									
+									n = 12; // Patch for 2016 12 Months									
                                         for(count = 0; count < n; count++){
-                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2015,' + count + ', 1), new Date(2015, ' + count + ', 31)]); dc.redrawAll();">');
+											var o = count + 1;
+                                        document.write('<a id="reset" class="reset btn btn-primary btn-sm" href="javascript:dc.filterAll(); monthrange_chart.filter([new Date(2016,' + count + ', 1), new Date(2016, ' + o + ', 31)]); dc.redrawAll();">');
                                         document.write(monthNames[count] + "</a> &nbsp;");
                                         }
                             </script>
@@ -252,7 +249,7 @@
                 </div>
             </div>
             <div class="row" style="background-color: #D8D8D8;">
-                <iframe src="../../timeline/shelter/timeline.html" width="100%" height="800" frameborder="0" scrolling="no" marginheight="10" marginwidth="10"></iframe>
+                <iframe src="timeline/shelter/timeline.html" width="100%" height="800" frameborder="0" scrolling="no" marginheight="10" marginwidth="10"></iframe>
             </div>
 
             <div class="row" style="background-color: #febd3b; color: #00000">
@@ -264,11 +261,11 @@
             </div>
 
             </div>
-            <script type="text/javascript" src="../../js/d3_002.js">
+            <script type="text/javascript" src="js/d3_002.js">
             </script><!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
-            <script type="text/javascript" src="../../js/crossfilter.js"></script>
-            <script type="text/javascript" src="../../js/dc.js"></script>
-            <script type="text/javascript" src="../../js/d3.js"></script>
+            <script type="text/javascript" src="js/crossfilter.js"></script>
+            <script type="text/javascript" src="js/dc.js"></script>
+            <script type="text/javascript" src="js/d3.js"></script>
             <script>
         // loading screen code
         $(window).load(function() {
@@ -524,7 +521,7 @@
                        .dimension(cf.month)
                        .mouseZoomable(true)
                        .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
                   //.elasticY(true)
                        .renderHorizontalGridLines(true)
@@ -543,7 +540,7 @@
                        .group(monthByTotal)
                        .colors(['#febd3b'])
                        .gap(1)
-                       .x(d3.time.scale().domain([new Date(2015, 0, 1), new Date(2015, 11, 31)]))
+                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
                        .xUnits(d3.time.months)
                        .yAxis().ticks(0);
 
@@ -632,7 +629,7 @@
                 var d = new Date();
                 var n = d.getMonth();
                 dc.filterAll();
-                monthrange_chart.filter([new Date(2015, n-1, 1), new Date(2015, n-1, 31)]);
+                monthrange_chart.filter([new Date(2016, n-1, 1), new Date(2016, n-1, 31)]);
                 dc.redrawAll();
                 });
 
