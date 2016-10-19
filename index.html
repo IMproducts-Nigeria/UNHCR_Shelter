@@ -242,12 +242,6 @@
             </div>
             
             <div class="row" id="timelineid"style="background-color: #febd3b; color: #ffffff">
-                <div class="col-md-12">
-                    <p><h2>Monthly Highlight</h2></p>
-                </div>
-            </div>
-            <div class="row" style="background-color: #D8D8D8;">
-                <iframe src="../../timeline/shelter/timeline.html" width="100%" height="800" frameborder="0" scrolling="no" marginheight="10" marginwidth="10"></iframe>
             </div>
 
             <div class="row" style="background-color: #febd3b; color: #00000">
@@ -257,13 +251,11 @@
                     Post comments, issues or bug report <a href="https://github.com/unhcr-jordan/sectors/issues">here</a></strong></p>
                 </div>
             </div>
-
-            </div>
-            <script type="text/javascript" src="../../js/d3_002.js">
+            <script type="text/javascript" src="js/d3_002.js">
             </script><!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
-            <script type="text/javascript" src="../../js/crossfilter.js"></script>
-            <script type="text/javascript" src="../../js/dc.js"></script>
-            <script type="text/javascript" src="../../js/d3.js"></script>
+            <script type="text/javascript" src="js/crossfilter.js"></script>
+            <script type="text/javascript" src="js/dc.js"></script>
+            <script type="text/javascript" src="js/d3.js"></script>
             <script>
         // loading screen code
         $(window).load(function() {
@@ -279,7 +271,7 @@
                                 .attr("height", height)
                                 .style("stroke-width", "0")
                                 .style("stroke", "grey");
-                    d3.json("../../data/admin1.geojson", function(json) {
+                    d3.json("data/admin1.geojson", function(json) {
                         var center = d3.geo.centroid(json)
                         var scale  = 150;
                         var offset = [width/2, height/2];
