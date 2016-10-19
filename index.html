@@ -107,360 +107,254 @@
             <div class="row" >
                 <div class="tab-pane fade active in" id="Overview">
                     <div class="row">
-                        <div class="col-md-3">
-                            <div class="row">
-                                <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
-                                        <center>
-                                            <h5><strong>State</strong><br ><small># of reports</small></h5>
-                                        </center>
-                                    </div>
-                                </center>
-                            </div>
-                            <div class="row">
-                                <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="sheltertype">
-                                        <center>
-                                            <h5><strong>Shelter Type</strong><br ><small># of assistance instance</small></h5>
-                                        </center>
-                                    </div>
-                                </center>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <center>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="unit">
-                                            <center>
-                                                <h5><strong>Unit</strong><br ><small># of assistance instance</small></h5>
-                                            </center>
-                                        </div>
-                                    </center>
-                                </div>
-                                <div class="col-md-6">
-                                    <center>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="loctype">
-                                            <center>
-                                                <h5><strong>Location Type</strong><br ><small># of assistance instance</small></h5>
-                                            </center>
-                                        </div>
-                                    </center>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="implementation">
-                                        <center>
-                                            <h5><strong>Implementation</strong><br ><small># of assistance instance</small></h5>
-                                        </center>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="row">
-                                <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Partner." data-position="right" data-step="5" id="partner">
-                                        <center>
-                                            <h5><strong>Partner</strong><br ><small># of assistance instance</small></h5>
-                                        </center>
-                                    </div>
-                                </center>
-                            </div>
-                            <div class="row">
-                                <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Site Type." data-position="right" data-step="6" id="allocation">
-                                        <center>
-                                            <h5><strong>HH per Shelter</strong><br ><small># of assistance instance</small></h5>
-                                        </center>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="row">
-                                <div class="col-md-6" >
-                                    <center>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="3" id="funded">
-                                            <center>
-                                                <h5><strong>Status</strong><br ><small># of assistance instance</small></h5>
-                                            </center>
-                                        </div>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
-                                            <center>
-                                                <h5><strong>Top Locations </strong> <br> <small>Camps locations are not aggregated within Governorate</small></h5>
-                                            </center>
-                                        </div>
-                                    </center>
-                                </div>
-                                
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" >
-                        <div class="col-md-12">
-                            <p><h2> &nbsp; </h2></p>
-                        </div>
+                                   <div class="col-md-4">
+
+                <div class="row">
+                    <div id="sector" class="col-xs-12 col-md-8 dc-chart" data-step="2" data-intro="Click on this row chart chart to filter by sector." data-position="right">
+                        <h5><strong>By Sectors / Working Groups</strong></h5>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="PerIndicator">
-                    <p>This is the sector overview</p>
-                 </div>
+                <div style="position:relative;top:180;left:20px; width:700px">
+				<strong>
+				<BR>
+				UNHCR & IOM thank all partners for their data and cooperation.
+				<BR>
+				Produced by the Regional Bureau for Europe, UNHCR, Geneva, with support from the UNHCR Jordan team.
+				</strong>
+
+               </div>
+
             </div>
-            
-            <div class="row" style="background-color: #33a3dc; color: #00000">
-                <div class="col-md-12">
-                    <p><strong>Produced by Information Management Unit, UNHCR, Nigeria. For more information please
-                    contact <a href="http://data.unhcr.org/jordan/team.html" target="_blank" >our team</a>.
-                    Post comments, issues or bug report <a href="https://github.com/unhcr-jordan/sectors/issues">here</a></strong></p>
+
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div id="map2" class="col-xs-12 col-md-8 dc-chart" data-step="4" data-intro="Or click on this map to filter by area of operation." data-position="right">
+                        <h5><strong>Filter on the Map </strong><small>by Country</small></h5>
+
+                    </div>
+                </div>
+                <div class="row">
+				<br>
+                    <div id="area" class="col-xs-12 col-md-8 dc-chart" data-step="5" data-intro="Click on this row chart to filter by area of operation." data-position="right">
+                        <h5><strong>Top Countries </strong><small>by Country</small></h5>
+
+                    </div>
+
                 </div>
             </div>
 
-            </div>
-            <script type="text/javascript" src="js/d3_002.js">
-            </script><!--script type="text/javascript" src="../../js/d3.v3.js"></script -->
-            <script type="text/javascript" src="js/crossfilter.js"></script>
-            <script type="text/javascript" src="js/dc.js"></script>
-            <script type="text/javascript" src="js/d3.js"></script>
-            <script>
-        // loading screen code
-        $(window).load(function() {
-        $(".loader").fadeOut("slow");
+
+        <script type="text/javascript" src="js/d3_002.js"></script>
+    <script type="text/javascript" src="js/crossfilter.js"></script>
+    <script type="text/javascript" src="js/dc.js"></script>
+    <script type="text/javascript" src="js/d3.js"></script>
+
+ <script>
+
+
+        var sector_chart = dc.rowChart("#sector");
+        var org_chart = dc.rowChart("#orgs");
+        var area_chart = dc.rowChart("#area");
+
+
+        var map2_chart = dc.geoChoroplethChart("#map2");
+
+        d3.csv("data/rrmrpviz.csv", function(csv_data){
+
+            var numberFormat = d3.format(",f");
+           // si = d3.format('s');
+           // siMod = function(val) { return si(val).replace(/G/, 'B') };
+
+            var cf = crossfilter(csv_data);
+
+            cf.agency = cf.dimension(function(d) { return d.Agency; });
+            cf.sector = cf.dimension(function(d) { return d.Sector; });
+            cf.area = cf.dimension(function(d) { return d.Country; });
+            cf.ccode = cf.dimension(function(d) { return d.Ccode; });
+            cf.total = cf.dimension(function(d) { return d.Total; });
+
+
+
+
+            var agency = cf.agency.group();
+            var sector = cf.sector.group();
+            var area = cf.area.group();
+            var ccode = cf.ccode.group();
+            var all = cf.groupAll();
+
+
+            var bytotalGroup = cf.total.groupAll().reduceSum(function (d) { return d.Total; });
+
+            var sectorByTotal = cf.sector.group().reduceSum(function (d) { return d.Total; });
+            var agencyByTotal = cf.agency.group().reduceSum(function (d) { return d.Total; });
+            var areaByTotal = cf.area.group().reduceSum(function (d) { return d.Total; });
+            var ccodeByTotal = cf.ccode.group().reduceSum(function (d) { return d.Total; });
+
+
+
+
+
+            // Implement bookmarking chart filters category --> Thanks to https://github.com/franckalbinet
+            // Serializing filters values in URL
+            function getFiltersValues() {
+                var filters = [
+                    { name: 'sector', value: sector_chart.filters()},
+                    { name: 'area', value: area_chart.filters()},
+                    { name: 'map2', value: map2_chart.filters()},
+                    { name: 'org', value: org_chart.filters()}
+                    ];
+                var recursiveEncoded = $.param( filters );
+                location.hash = recursiveEncoded;
+            }
+            // Init chart filters
+            function initFilters() {
+                // Get hash values
+                var parseHash = /^#sector=([A-Za-z0-9,_\-\/\s]*)&objective=([A-Za-z0-9,_\-\/\s]*)&output=([A-Za-z0-9,_\-\/\s]*)&category=([A-Za-z0-9,_\-\/\s]*)&area=([A-Za-z0-9,_\-\/\s]*)&map2=([A-Za-z0-9,_\-\/\s]*)&org=([A-Za-z0-9,_\-\/\s]*)$/;
+                var parsed = parseHash.exec(decodeURIComponent(location.hash));
+                function filter(chart, rank) {  // for instance chart = sector_chart and rank in URL hash = 1
+                    // sector chart
+                    if (parsed[rank] == "") {
+                        chart.filter(null);
+                    }
+                    else {
+                        var filterValues = parsed[rank].split(",");
+                        for (var i = 0; i < filterValues.length; i++ ) {
+                            chart.filter(filterValues[i]);
+                        }
+                    }
+                }
+                if (parsed) {
+                    filter(sector_chart, 1);
+                    filter(objective_chart, 2);
+                    filter(output_chart, 3);
+                    filter(category_chart, 4);
+                    filter(area_chart, 5);
+                    filter(map2_chart, 6);
+                    filter(org_chart, 7);
+                    filter(costunit_chart, 8);
+                    filter(gender_chart, 9);
+                    filter(target_chart, 10);
+                }
+            }
+
+            // tooltips for row chart
+            var rowTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " USD"; });
+
+
+
+
+            dc.dataCount("#count-info")
+                .dimension(cf)
+                .group(all);
+
+
+
+           dc.numberDisplay("#totalusd")
+               .formatNumber(d3.format(",f"))
+               .valueAccessor(function(d){return +d})
+            .group(bytotalGroup);
+
+
+
+
+             /* 3W data are sorted per sector and color are allocated to sectors as per standard code in rrp6 */
+            sector_chart.width(400).height(300)
+                .dimension(cf.sector)
+                .group(sectorByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(15);
+                })
+                .colors(['#3182bd'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+				.margins({top: 0, right: 55, bottom: -1, left: 30})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+
+            area_chart.width(400).height(220)
+                .dimension(cf.area)
+                .group(areaByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(7);
+                })
+                .colors(['#A9DDA9'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+            org_chart.width(450).height(570)
+                .dimension(cf.agency)
+                .group(agencyByTotal)
+                .elasticX(true)
+                .on("filtered", getFiltersValues)
+                .data(function(group) {
+                    return group.top(20);
+                })
+                .colors(['#3182bd'])
+                .colorDomain([0,0])
+                .colorAccessor(function(d, i){return 1;})
+                .xAxis().ticks(4).tickFormat(d3.format("s"));
+
+
+         /* Region map with ID rid */
+            d3.json("data/world.geojson", function (governJSON) {
+
+                 map2_chart.width(350).height(200)
+                    .dimension(cf.ccode)
+                    .group(ccodeByTotal)
+                    .colors(['#FFFFFF', "rgb(49,163,84)"]) //'#CB181D'
+                    .colorDomain([0, 2])
+                    .overlayGeoJson(governJSON.features, "cname", function (d) {
+                        return d.properties.cname;
+                    })
+                    .projection(d3.geo.mercator().center([58,29]).scale(600)) /* Center on Jordan */
+					.title(function (d) {
+                        return "Geo-Filter: " + d.key;
+                    });
+
+                    $('#reset').on('click', function (){
+                      dc.filterAll();
+                      dc.redrawAll();
+                      return false;
+                    })
+                    //dc.redrawAll();
+                    dc.renderAll();
+
+                    /* Customised infobox */
+                    d3.selectAll("g.row").call(rowTip);
+                    d3.selectAll("g.row").on('mouseover', rowTip.show)
+                        .on('mouseout', rowTip.hide);
+
+
+                });
+
+            $('#loading').hide();
+            $('#dashboard').show();
+
         });
 
-                  //Prepare to load data
-                var dataset;
-
-                var sheltertype_chart = dc.rowChart("#sheltertype");
-                var unit_chart = dc.pieChart("#unit");
-                var loctype_chart = dc.pieChart("#loctype");
-                var funded_chart = dc.rowChart("#funded");
-                var implementation_chart = dc.rowChart("#implementation");
-                var allocation_chart = dc.rowChart("#allocation");
-                var partner_chart = dc.rowChart("#partner");
-                var location_chart = dc.rowChart("#location");
-                var obj_chart = dc.rowChart("#obj");
-              
-                function getFiltersValues() {
-                       var filters = [
-                                       { name: 'sheltertype', value: sheltertype_chart.filters()},
-                                       { name: 'unit', value: unit_chart.filters()},
-                                       { name: 'loctype', value: loctype_chart.filters()},
-                                       { name: 'funded', value: funded_chart.filters()},
-                                       { name: 'implementation', value: implementation_chart.filters()},
-                                       { name: 'partner', value: partner_chart.filters()},
-                                       { name: 'allocation', value: allocation_chart.filters()},
-                                       { name: 'monthrange', value: monthrange_chart.filters()},
-                                       { name: 'location', value: location_chart.filters()},
-                                       { name: 'obj', value: obj_chart.filters()}
-                                                                           ];
-                       var recursiveEncoded = $.param( filters );
-                       location.hash = recursiveEncoded;
-                   }
-                function initFilters() {
-        // Get hash values
-                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&unit=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&implementation=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&obj=([A-Za-z0-9,_\-\/\s]*)$/;
-                       var parsed = parseHash.exec(decodeURIComponent(location.hash));
-                       function filter(chart, rank) {
-                           if (parsed[rank] == "") { chart.filter(null); }
-                           else {
-                               var filterValues = parsed[rank].split(",");
-                               for (var i = 0; i < filterValues.length; i++ ) { chart.filter(filterValues[i]); }
-                           }
-                       }
-                       if (parsed) {
-                           filter(sheltertype_chart, 1);
-                           filter(unit_chart, 2);
-                           filter(funded_chart, 3);
-                           filter(implementation_chart, 4);
-                           filter(partner_chart, 5);
-                           filter(allocation_chart, 6);
-                           filter(allocation_chart, 7);
-                           filter(loctype_chart, 8);
-                           filter(obj_chart, 9);
-                       }
-                   }
-
-                d3.csv("data/data.csv", function(error, dataset) {
-		
-		var dateFormat = d3.time.format("%d/%m/%Y");
-                var numberFormat = d3.format(",f");
-
-                dataset.forEach(function (d) {
-                   d.dd = dateFormat.parse(d.StartDate);
-                   d.month = d3.time.month(d.dd); // pre-calculate month for better performance
-                   d.close = +d.close; // coerce to number
-                   d.open = +d.open;
-                });
-
-                if (error) {  //If error is not null, something went wrong.
-                   console.log(error);  //Log the error.
-                } else {      //If no error, the file loaded correctly. Yay!
-         //console.log(dataset);   //Log the data.
-			
-                var cf = crossfilter(dataset);
-
-                cf.sheltertype = cf.dimension(function(d) { return d.ShelterType; });
-                var sheltertype = cf.sheltertype.group();
-                var sheltertypeByTotal = cf.sheltertype.group().reduceSum(function (d) { return d.Value;} );
-                   sheltertype_chart.width(400).height(250)
-                       .dimension(cf.indicator)
-                       .group(sheltertypeByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(10); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.unit = cf.dimension(function(d) { return d.Unit; });
-                var unit = cf.unit.group();
-                var unitByTotal = cf.unit.group().reduceSum(function (d) { return d.Value;} );
-                   unit_chart.width(100).height(100)
-                       .dimension(cf.unit)
-                       .group(unitByTotal)
-                       .innerRadius(10)
-                       .colors(['#FEBD3B', /* boys */
-                               '#FED789', /* girls */
-                               '#FF8E76', /* men */	
-							   '#FE9050', /* women */
-                               ])
-                       .colorDomain([0,4])
-                       .renderLabel(true)
-                       .colorAccessor(function(d, i){return i%4;})
-                       .on("filtered", getFiltersValues);
-
-                cf.loctype = cf.dimension(function(d) { return d.LocationType; });
-                var loctype = cf.loctype.group();
-                var loctypeByTotal = cf.loctype.group().reduceSum(function (d) { return d.Value;} );
-                   poptype_chart.width(100).height(100)
-                       .dimension(cf.loctype)
-                       .group(loctypeByTotal)
-                       .innerRadius(10)
-                       .colors(['#febd3b', /* Camp */
-                               '#FED789', /* Urban */
-                               '#FF8E76', /* Host Community*/							   
-                               ])
-                       .colorDomain([0,4])
-                       .renderLabel(true)
-                       .colorAccessor(function(d, i){return i%4;})
-                       .on("filtered", getFiltersValues);
-
-                cf.funded = cf.dimension(function(d) { return d.Status; });
-                var funded = cf.funded.group();
-                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
-                   funded_chart.width(400).height(175)
-                       .dimension(cf.funded)
-                       .group(fundedByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(100); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.location = cf.dimension(function(d) { return d.LocName; });
-                var location = cf.location.group();
-                var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
-                   location_chart.width(400).height(175)
-                       .dimension(cf.location)
-                       .group(locationByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(6); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.obj = cf.dimension(function(d) { return d.State; });
-                var obj = cf.obj.group();
-                var objByTotal = cf.obj.group().reduceCount();
-                   obj_chart.width(400).height(140)
-                       .dimension(cf.obj)
-                       .group(objByTotal)
-                       .elasticX(false)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(4); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.implementation = cf.dimension(function(d) { return d.Implementation; });
-                var implementation = cf.implementation.group();
-                var implementationByTotal = cf.implementation.group().reduceSum(function (d) { return d.Value;} );
-                   implementation_chart.width(400).height(130)
-                       .dimension(cf.appeal)
-                       .group(implementationByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(100); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.allocation = cf.dimension(function(d) { return d.HHperShelter; });
-                var allocation = cf.allocation.group();
-                var allocationByTotal = cf.allocation.group().reduceSum(function (d) { return d.Value;} );
-                   allocation_chart.width(400).height(90)
-                       .dimension(cf.allocation)
-                       .group(allocationByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(100); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
+	function rtip(){
+            var numberFormat = d3.format(",f");
+            var rowTip = d3.tip()
+                  .attr('class', 'd3-tip')
+                  .offset([-10, 0])
+                  .html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " USD"; });
 
 
-
-                cf.partner = cf.dimension(function(d) { return d.Partner; });
-                var partner = cf.partner.group();
-                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
-                   partner_chart.width(400).height(570)
-                       .dimension(cf.partner)
-                       .group(partnerByTotal)
-                       .elasticX(true)
-                       .on("filtered", getFiltersValues)
-                       .data(function(group) { return group.top(200); })
-                       .colors(['#febd3b'])
-                       .colorDomain([0,0])
-                       .colorAccessor(function(d, i){return 1;})
-                       .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                  var all = cf.groupAll();
-                  dc.dataCount("#count-info")
-                       .dimension(cf)
-                       .group(all);
-
-
-               dc.renderAll();
-
-               /* Customised infobox */
-               d3.selectAll("g.row").call(rowTip);
-               d3.selectAll("g.row").on('mouseover', rowTip.show).on('mouseout', rowTip.hide);
-
-               d3.selectAll(".pie-slice").call(pieTip);
-               d3.selectAll(".pie-slice").on('mouseover', pieTip.show).on('mouseout', pieTip.hide);
-
-
-               // tooltips
-                var rowTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
-                var pieTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" +  d.data.key + "</span> : "  + numberFormat(d.value) + " Assistance Instance"; });
-                var barTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + d.data.key + "</span> : " + numberFormat(d.value) + " Assistance Instance";});
-                var bubbleTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + d.key + "</span> : " + numberFormat(d.value) + " Assistance Instance";});
-                //var geoTip = d3.tip().attr('class', 'd3-tip').offset([-10, 0]).html(function (d) { return "<span style='color: #f0027f'>" + cazacode2caza[d.key] + "</span> : " + numberFormat(d.value) + " Individuals";});
-
-
-                   $('#dashboard').show();
-                }
-                });
-            </script>
+	                    d3.selectAll("g.row").call(rowTip);
+                    d3.selectAll("g.row").on('mouseover', rowTip.show)
+                        .on('mouseout', rowTip.hide);
+				}
+    </script>
+    <script src="js/bootstrap.js"></script>
 
             <script src="js/bootstrap.js"></script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
