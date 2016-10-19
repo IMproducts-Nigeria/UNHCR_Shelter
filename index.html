@@ -292,7 +292,7 @@
                    }
                 function initFilters() {
         // Get hash values
-                       var parseHash = /^#indicator=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
                        var parsed = parseHash.exec(decodeURIComponent(location.hash));
                        function filter(chart, rank) {
                            if (parsed[rank] == "") { chart.filter(null); }
