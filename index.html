@@ -336,7 +336,7 @@
 
                 cf.sheltertype = cf.dimension(function(d) { return d.ShelterType; });
                 var sheltertype = cf.sheltertype.group();
-                var sheltertypeByTotal = cf.sheltertype.group().reduceSum(function (d) { return d.No;} );
+                var sheltertypeByTotal = cf.sheltertype.group().reduceSum(function (d) { return d.Value;} );
                    sheltertype_chart.width(400).height(250)
                        .dimension(cf.indicator)
                        .group(sheltertypeByTotal)
@@ -350,7 +350,7 @@
 
                 cf.unit = cf.dimension(function(d) { return d.Unit; });
                 var unit = cf.unit.group();
-                var unitByTotal = cf.unit.group().reduceSum(function (d) { return d.No;} );
+                var unitByTotal = cf.unit.group().reduceSum(function (d) { return d.Value;} );
                    unit_chart.width(100).height(100)
                        .dimension(cf.unit)
                        .group(unitByTotal)
@@ -367,7 +367,7 @@
 
                 cf.loctype = cf.dimension(function(d) { return d.LocationType; });
                 var loctype = cf.loctype.group();
-                var loctypeByTotal = cf.loctype.group().reduceSum(function (d) { return d.No;} );
+                var loctypeByTotal = cf.loctype.group().reduceSum(function (d) { return d.Value;} );
                    poptype_chart.width(100).height(100)
                        .dimension(cf.loctype)
                        .group(loctypeByTotal)
@@ -383,7 +383,7 @@
 
                 cf.funded = cf.dimension(function(d) { return d.Status; });
                 var funded = cf.funded.group();
-                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.No;} );
+                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
                    funded_chart.width(400).height(175)
                        .dimension(cf.funded)
                        .group(fundedByTotal)
@@ -425,7 +425,7 @@
 
                 cf.appeal = cf.dimension(function(d) { return d.Implementation; });
                 var appeal = cf.appeal.group();
-                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.No;} );
+                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
                    appeal_chart.width(400).height(130)
                        .dimension(cf.appeal)
                        .group(appealByTotal)
@@ -455,7 +455,7 @@
 
                 cf.partner = cf.dimension(function(d) { return d.Partner; });
                 var partner = cf.partner.group();
-                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.No;} );
+                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
                    partner_chart.width(400).height(570)
                        .dimension(cf.partner)
                        .group(partnerByTotal)
