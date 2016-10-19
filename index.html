@@ -129,7 +129,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <center>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="gender">
+                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="unit">
                                             <center>
                                                 <h5><strong>Unit</strong><br ><small># of assistance instance</small></h5>
                                             </center>
@@ -138,7 +138,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <center>
-                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="poptype">
+                                        <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="loctype">
                                             <center>
                                                 <h5><strong>Location Type</strong><br ><small># of assistance instance</small></h5>
                                             </center>
@@ -243,7 +243,7 @@
                                 .attr("height", height)
                                 .style("stroke-width", "0")
                                 .style("stroke", "grey");
-                    d3.json("../../data/admin1.geojson", function(json) {
+                    d3.json("data/admin1.geojson", function(json) {
                         var center = d3.geo.centroid(json)
                         var scale  = 150;
                         var offset = [width/2, height/2];
@@ -263,8 +263,8 @@
                 var dataset;
 
                 var sheltertype_chart = dc.rowChart("#sheltertype");
-                var gender_chart = dc.pieChart("#gender");
-                var poptype_chart = dc.pieChart("#poptype");
+                var unit_chart = dc.pieChart("#unit");
+                var loctype_chart = dc.pieChart("#loctype");
                 var funded_chart = dc.rowChart("#funded");
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
@@ -276,8 +276,8 @@
                 function getFiltersValues() {
                        var filters = [
                                        { name: 'sheltertype', value: sheltertype_chart.filters()},
-                                       { name: 'gender', value: gender_chart.filters()},
-                                       { name: 'poptype', value: poptype_chart.filters()},
+                                       { name: 'unit', value: unit_chart.filters()},
+                                       { name: 'loctype', value: loctype_chart.filters()},
                                        { name: 'funded', value: funded_chart.filters()},
                                        { name: 'appeal', value: appeal_chart.filters()},
                                        { name: 'partner', value: partner_chart.filters()},
@@ -292,7 +292,7 @@
                    }
                 function initFilters() {
         // Get hash values
-                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&gender=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&unit=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
                        var parsed = parseHash.exec(decodeURIComponent(location.hash));
                        function filter(chart, rank) {
                            if (parsed[rank] == "") { chart.filter(null); }
@@ -303,13 +303,13 @@
                        }
                        if (parsed) {
                            filter(sheltertype_chart, 1);
-                           filter(gender_chart, 2);
+                           filter(unit_chart, 2);
                            filter(funded_chart, 3);
                            filter(appeal_chart, 4);
                            filter(partner_chart, 5);
                            filter(allocation_chart, 6);
                            filter(allocation_chart, 7);
-                           filter(poptype_chart, 8);
+                           filter(loctype_chart, 8);
                            filter(region_chart, 9);
                            filter(state_chart, 10);
                        }
@@ -348,12 +348,12 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.gender = cf.dimension(function(d) { return d.Gender; });
-                var gender = cf.gender.group();
-                var genderByTotal = cf.gender.group().reduceSum(function (d) { return d.Value;} );
-                   gender_chart.width(100).height(100)
-                       .dimension(cf.gender)
-                       .group(genderByTotal)
+                cf.unit = cf.dimension(function(d) { return d.Unit; });
+                var unit = cf.unit.group();
+                var unitByTotal = cf.unit.group().reduceSum(function (d) { return d.No;} );
+                   unit_chart.width(100).height(100)
+                       .dimension(cf.unit)
+                       .group(unitByTotal)
                        .innerRadius(10)
                        .colors(['#FEBD3B', /* boys */
                                '#FED789', /* girls */
@@ -365,12 +365,12 @@
                        .colorAccessor(function(d, i){return i%4;})
                        .on("filtered", getFiltersValues);
 
-                cf.poptype = cf.dimension(function(d) { return d.LocationType; });
-                var poptype = cf.poptype.group();
-                var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.No;} );
+                cf.loctype = cf.dimension(function(d) { return d.LocationType; });
+                var loctype = cf.loctype.group();
+                var loctypeByTotal = cf.loctype.group().reduceSum(function (d) { return d.No;} );
                    poptype_chart.width(100).height(100)
-                       .dimension(cf.poptype)
-                       .group(poptypeByTotal)
+                       .dimension(cf.loctype)
+                       .group(loctypeByTotal)
                        .innerRadius(10)
                        .colors(['#febd3b', /* Camp */
                                '#FED789', /* Urban */
