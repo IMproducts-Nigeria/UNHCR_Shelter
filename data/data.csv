@@ -1,4 +1,4 @@
-State,LocName,LocationType,ShelterType,Unit,No,HHperShelter,TotalHH,Partner,Status,Implementation
+State,LocName,LocationType,ShelterType,Unit,Value,HHperShelter,TotalHH,Partner,Status,Implementation
 Borno,Bakasi Camp Phase I,Formal Camp,T shelter Big family for 1HH,Shelter,200,1,200,NRC,Completed,Indirect
 Borno,Bakasi Camp Phase I,Formal Camp,T shelter Small family for 2HH,Shelter,250,2,500,NRC,Completed,Indirect
 Borno,Bakasi Camp Phase II,Formal Camp,T shelter Small family for 2HH,Shelter,550,2,1100,UNHCR,Completed,Direct
