@@ -148,7 +148,7 @@
                             </div>
                             <div class="row">
                                 <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="appeal">
+                                    <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="implementation">
                                         <center>
                                             <h5><strong>Implementation</strong><br ><small># of assistance instance</small></h5>
                                         </center>
@@ -195,7 +195,7 @@
                                 <div class="col-md-6"
                                 data-intro="Click anywhere on the map to filter the results. The camp icon filters activities for camp only and the small jordan map filters country-wide activities" data-position="left" data-step="8" >
                                     <div id="region">
-                                        <h5><strong>Governorates</strong><br >
+                                        <h5><strong>State</strong><br >
                                         <small>Some activities are country-wide or for camps only.</small></h5>
                                     </div>
                                 </div>
@@ -266,7 +266,7 @@
                 var unit_chart = dc.pieChart("#unit");
                 var loctype_chart = dc.pieChart("#loctype");
                 var funded_chart = dc.rowChart("#funded");
-                var appeal_chart = dc.rowChart("#appeal");
+                var implementation_chart = dc.rowChart("#implementation");
                 var allocation_chart = dc.rowChart("#allocation");
                 var partner_chart = dc.rowChart("#partner");
                 var location_chart = dc.rowChart("#location");
@@ -279,7 +279,7 @@
                                        { name: 'unit', value: unit_chart.filters()},
                                        { name: 'loctype', value: loctype_chart.filters()},
                                        { name: 'funded', value: funded_chart.filters()},
-                                       { name: 'appeal', value: appeal_chart.filters()},
+                                       { name: 'implementation', value: implementation_chart.filters()},
                                        { name: 'partner', value: partner_chart.filters()},
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
@@ -292,7 +292,7 @@
                    }
                 function initFilters() {
         // Get hash values
-                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&unit=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&appeal=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
+                       var parseHash = /^#sheltertype=([A-Za-z0-9,_\-\/\s]*)&unit=([A-Za-z0-9,_\-\/\s]*)&funded=([A-Za-z0-9,_\-\/\s]*)&implementation=([A-Za-z0-9,_\-\/\s]*)&partner=([A-Za-z0-9,_\-\/\s]*)&allocation=([A-Za-z0-9,_\-\/\s]*)&location=([A-Za-z0-9,_\-\/\s]*)$/;
                        var parsed = parseHash.exec(decodeURIComponent(location.hash));
                        function filter(chart, rank) {
                            if (parsed[rank] == "") { chart.filter(null); }
@@ -305,7 +305,7 @@
                            filter(sheltertype_chart, 1);
                            filter(unit_chart, 2);
                            filter(funded_chart, 3);
-                           filter(appeal_chart, 4);
+                           filter(implementation_chart, 4);
                            filter(partner_chart, 5);
                            filter(allocation_chart, 6);
                            filter(allocation_chart, 7);
@@ -395,7 +395,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.location = cf.dimension(function(d) { return d.Governorate; });
+                cf.location = cf.dimension(function(d) { return d.LocName; });
                 var location = cf.location.group();
                 var locationByTotal = cf.location.group().reduceSum(function (d) { return d.Value;} );
                    location_chart.width(400).height(175)
@@ -423,12 +423,12 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.appeal = cf.dimension(function(d) { return d.Implementation; });
-                var appeal = cf.appeal.group();
-                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
-                   appeal_chart.width(400).height(130)
+                cf.implementation = cf.dimension(function(d) { return d.Implementation; });
+                var implementation = cf.implementation.group();
+                var implementationByTotal = cf.implementation.group().reduceSum(function (d) { return d.Value;} );
+                   implementation_chart.width(400).height(130)
                        .dimension(cf.appeal)
-                       .group(appealByTotal)
+                       .group(implementationByTotal)
                        .elasticX(true)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(100); })
@@ -437,7 +437,7 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.allocation = cf.dimension(function(d) { return d.allocation; });
+                cf.allocation = cf.dimension(function(d) { return d.HHperShelter; });
                 var allocation = cf.allocation.group();
                 var allocationByTotal = cf.allocation.group().reduceSum(function (d) { return d.Value;} );
                    allocation_chart.width(400).height(90)
@@ -468,7 +468,7 @@
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
                 // Now create the buble chart for all region
-                cf.region = cf.dimension(function(d) { return d.Governorate; });
+                cf.region = cf.dimension(function(d) { return d.State; });
                 var region = cf.region.group();
                 var regionByTotal = cf.region.group().reduceSum(function (d) { return d.Value;} );
                       region_chart.width(400).height(400)
