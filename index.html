@@ -110,7 +110,7 @@
                         <div class="col-md-3">
                             <div class="row">
                                 <center>
-                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="state">
+                                    <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
                                         <center>
                                             <h5><strong>State</strong><br ><small># of reports</small></h5>
                                         </center>
@@ -239,7 +239,7 @@
                 var allocation_chart = dc.rowChart("#allocation");
                 var partner_chart = dc.rowChart("#partner");
                 var location_chart = dc.rowChart("#location");
-                var state_chart = dc.rowChart("#state");
+                var obj_chart = dc.rowChart("#obj");
               
                 function getFiltersValues() {
                        var filters = [
@@ -252,7 +252,7 @@
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
                                        { name: 'location', value: location_chart.filters()},
-                                       { name: 'state', value: state_chart.filters()}
+                                       { name: 'obj', value: obj_chart.filters()}
                                                                            ];
                        var recursiveEncoded = $.param( filters );
                        location.hash = recursiveEncoded;
@@ -277,7 +277,7 @@
                            filter(allocation_chart, 6);
                            filter(allocation_chart, 7);
                            filter(loctype_chart, 8);
-                           filter(state_chart, 9);
+                           filter(obj_chart, 9);
                        }
                    }
 
@@ -375,12 +375,12 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.state = cf.dimension(function(d) { return d.State; });
-                var state = cf.state.group();
-                var stateByTotal = cf.state.group().reduceCount();
-                   state_chart.width(400).height(140)
+                cf.obj = cf.dimension(function(d) { return d.State; });
+                var obj = cf.obj.group();
+                var objByTotal = cf.obj.group().reduceCount();
+                   obj_chart.width(400).height(140)
                        .dimension(cf.obj)
-                       .group(stateByTotal)
+                       .group(objByTotal)
                        .elasticX(false)
                        .on("filtered", getFiltersValues)
                        .data(function(group) { return group.top(4); })
