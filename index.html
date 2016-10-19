@@ -234,32 +234,7 @@
         $(".loader").fadeOut("slow");
         });
 
-        //GeoJSON data for background map
-                    var width = 360;
-                    var height = 360;
-                    var svg = d3.select("#region")
-                                .append("svg")
-                                .attr("width", width)
-                                .attr("height", height)
-                                .style("stroke-width", "0")
-                                .style("stroke", "grey");
-                    d3.json("data/admin1.geojson", function(json) {
-                        var center = d3.geo.centroid(json)
-                        var scale  = 150;
-                        var offset = [width/2, height/2];
-                        var projection = d3.geo.mercator().scale(scale).center(center).translate(offset);
-                        var path = d3.geo.path().projection(projection);
-                        var bounds  = path.bounds(json);
-                        var hscale  = scale*(width) / (bounds[1][0] - bounds[0][0]);
-                        var vscale  = scale*(height - 75)/ (bounds[1][1] - bounds[0][1]);
-                        var scale   = (hscale < vscale) ? hscale : vscale;
-                        var offset  = [width - (bounds[0][0] + bounds[1][0])/2, height - (bounds[0][1] + bounds[1][1])/2];
-                        path.projection(d3.geo.mercator().center([42,29.9]).scale(3500))
-                        svg.append("rect").attr('width', width).attr('height', height).style('stroke', 'black').style('fill', 'none');
-                        svg.selectAll("path").data(json.features).enter().append("path").attr("d", path).style("fill", "white").style("stroke-width", "1").style("stroke", "black")
-                    });
-
-           //Prepare to load data
+                  //Prepare to load data
                 var dataset;
 
                 var sheltertype_chart = dc.rowChart("#sheltertype");
@@ -271,8 +246,7 @@
                 var partner_chart = dc.rowChart("#partner");
                 var location_chart = dc.rowChart("#location");
                 var state_chart = dc.rowChart("#state");
-                var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
-
+              
                 function getFiltersValues() {
                        var filters = [
                                        { name: 'sheltertype', value: sheltertype_chart.filters()},
@@ -284,9 +258,8 @@
                                        { name: 'allocation', value: allocation_chart.filters()},
                                        { name: 'monthrange', value: monthrange_chart.filters()},
                                        { name: 'location', value: location_chart.filters()},
-                                       { name: 'state', value: state_chart.filters()},
-                                       { name: 'region', value: region_chart.filters()}
-                                    ];
+                                       { name: 'state', value: state_chart.filters()}
+                                                                           ];
                        var recursiveEncoded = $.param( filters );
                        location.hash = recursiveEncoded;
                    }
@@ -310,8 +283,7 @@
                            filter(allocation_chart, 6);
                            filter(allocation_chart, 7);
                            filter(loctype_chart, 8);
-                           filter(region_chart, 9);
-                           filter(state_chart, 10);
+                           filter(state_chart, 9);
                        }
                    }
 
@@ -467,52 +439,10 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                // Now create the buble chart for all region
-                cf.region = cf.dimension(function(d) { return d.State; });
-                var region = cf.region.group();
-                var regionByTotal = cf.region.group().reduceSum(function (d) { return d.Value;} );
-                      region_chart.width(400).height(400)
-                        .transitionDuration(500)
-                        .dimension(cf.region)
-                        .group(regionByTotal)
-                        .colors(['#febd3b'])
-                        .colorDomain([0, 0])
-                        .colorAccessor(function(d, i){return 1;})
-                        .title(function(d) { return "region: " + d.key + "\nTotal:" + d.value;})
-
-                  //      .radiusValueAccessor(function (p) { return p.value;  })
-                   //     .maxBubbleRelativeSize(0.03)
-
-                        .r(d3.scale.linear().domain([0, 1000000]))
-                        .point("IRBID", 98, 58)
-                        .point("MAFRAQ", 193, 70)
-                        .point("ZARQA", 160, 108)
-                        .point("AMMAN", 130, 120)
-                        .point("MAAN", 120, 230)
-                        .point("AQABAH", 70, 260)
-                        .point("TAFILAH", 90, 180)
-                        .point("KARAK", 100, 155)
-                        .point("MADABA", 95, 130)
-                        .point("BALQA", 94, 96)
-                        .point("JARASH", 104, 82)
-                        .point("AJLOUN", 74, 96)
-                        .point("ZaatariCamp", 270, 150)
-                        .point("AzraqCamp", 270, 180)
-                        .point("Countrywide", 255, 260)
-                        .on("filtered", getFiltersValues)
-                      //  .debug(true)
-                       ;
-
-                var all = cf.groupAll();
+                  var all = cf.groupAll();
                   dc.dataCount("#count-info")
                        .dimension(cf)
                        .group(all);
-
-
-                cf.region = cf.dimension(function(d) { return d.region; });
-                var region = cf.region.group();
-
-
 
 
                dc.renderAll();
@@ -539,23 +469,6 @@
             </script>
 
             <script src="js/bootstrap.js"></script>
-
-
-            <script>
-            // Script to initiate filtering on page at the right place
-                $(window).bind("load", function() {
-                if (GetUrlValue('Camp')=="ZaatariCamp")
-                {
-                dc.filterAll(); location_chart.filter("ZaatariCamp");  dc.renderAll();
-                }
-                var d = new Date();
-                var n = d.getMonth();
-                dc.filterAll();
-                monthrange_chart.filter([new Date(2016, n-1, 1), new Date(2016, n-1, 31)]);
-                dc.redrawAll();
-                });
-
-            </script>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
             <div class="d3-tip" style="box-sizing: border-box; position: absolute; display: none">&nbsp;</div>
