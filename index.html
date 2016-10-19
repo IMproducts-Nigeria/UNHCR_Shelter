@@ -317,21 +317,6 @@
 
                 d3.csv("data/data.csv", function(error, dataset) {
 
-                var dateFormat = d3.time.format("%d/%m/%Y");
-                var numberFormat = d3.format(",f");
-
-                dataset.forEach(function (d) {
-                   d.dd = dateFormat.parse(d.StartDate);
-                   d.month = d3.time.month(d.dd); // pre-calculate month for better performance
-                   d.close = +d.close; // coerce to number
-                   d.open = +d.open;
-                });
-
-                if (error) {  //If error is not null, something went wrong.
-                   console.log(error);  //Log the error.
-                } else {      //If no error, the file loaded correctly. Yay!
-         //console.log(dataset);   //Log the data.
-
                 var cf = crossfilter(dataset);
 
                 cf.sheltertype = cf.dimension(function(d) { return d.ShelterType; });
