@@ -112,7 +112,7 @@
                                 <center>
                                     <div class="dc-chart" data-intro="Click on this row chart to filter by Activity." data-position="right" data-step="1" id="obj">
                                         <center>
-                                            <h5><strong>Output</strong><br ><small># of reports</small></h5>
+                                            <h5><strong>State</strong><br ><small># of reports</small></h5>
                                         </center>
                                     </div>
                                 </center>
@@ -121,7 +121,7 @@
                                 <center>
                                     <div class="dc-chart" data-intro="Click on this row chart to filter by Indicator." data-position="right" data-step="1" id="indicator">
                                         <center>
-                                            <h5><strong>Indicator</strong><br ><small># of assistance instance</small></h5>
+                                            <h5><strong>Shelter Type</strong><br ><small># of assistance instance</small></h5>
                                         </center>
                                     </div>
                                 </center>
@@ -131,7 +131,7 @@
                                     <center>
                                         <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="gender">
                                             <center>
-                                                <h5><strong>Age Group & Gender</strong><br ><small># of assistance instance</small></h5>
+                                                <h5><strong>Unit</strong><br ><small># of assistance instance</small></h5>
                                             </center>
                                         </div>
                                     </center>
@@ -140,7 +140,7 @@
                                     <center>
                                         <div class="dc-chart" data-intro="Click on this pie chart to filter by Population Cohort." data-position="right" data-step="2" id="poptype">
                                             <center>
-                                                <h5><strong>Population Type</strong><br ><small># of assistance instance</small></h5>
+                                                <h5><strong>Location Type</strong><br ><small># of assistance instance</small></h5>
                                             </center>
                                         </div>
                                     </center>
@@ -150,7 +150,7 @@
                                 <center>
                                     <div class="dc-chart" data-intro="Click on this row chart to filter by RRP6 status of the report." data-position="right" data-step="4" id="appeal">
                                         <center>
-                                            <h5><strong>Inter Agency Appeal</strong><br ><small># of assistance instance</small></h5>
+                                            <h5><strong>Implementation</strong><br ><small># of assistance instance</small></h5>
                                         </center>
                                     </div>
                                 </center>
@@ -170,7 +170,7 @@
                                 <center>
                                     <div class="dc-chart" data-intro="Click on this row chart to filter by Site Type." data-position="right" data-step="6" id="allocation">
                                         <center>
-                                            <h5><strong>Allocation according to Initial Plan</strong><br ><small># of assistance instance</small></h5>
+                                            <h5><strong>HH per Shelter</strong><br ><small># of assistance instance</small></h5>
                                         </center>
                                     </div>
                                 </center>
@@ -182,7 +182,7 @@
                                     <center>
                                         <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="3" id="funded">
                                             <center>
-                                                <h5><strong>Funding Agency</strong><br ><small># of assistance instance</small></h5>
+                                                <h5><strong>Status</strong><br ><small># of assistance instance</small></h5>
                                             </center>
                                         </div>
                                         <div class="dc-chart" data-intro="Click on this pie chart to filter by Funding Agency." data-position="right" data-step="10" id="location">
@@ -336,9 +336,9 @@
 
                 var cf = crossfilter(dataset);
 
-                cf.indicator = cf.dimension(function(d) { return d.Indicator; });
+                cf.indicator = cf.dimension(function(d) { return d.ShelterType; });
                 var indicator = cf.indicator.group();
-                var indicatorByTotal = cf.indicator.group().reduceSum(function (d) { return d.Value;} );
+                var indicatorByTotal = cf.indicator.group().reduceSum(function (d) { return d.No;} );
                    indicator_chart.width(400).height(250)
                        .dimension(cf.indicator)
                        .group(indicatorByTotal)
