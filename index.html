@@ -269,8 +269,6 @@
                 var appeal_chart = dc.rowChart("#appeal");
                 var allocation_chart = dc.rowChart("#allocation");
                 var partner_chart = dc.rowChart("#partner");
-                var month_chart = dc.lineChart("#month");
-                var monthrange_chart = dc.barChart("#monthrange");
                 var location_chart = dc.rowChart("#location");
                 var obj_chart = dc.rowChart("#obj");
                 var region_chart = dc.bubbleOverlay("#region").svg(d3.select("#region svg"));
@@ -367,9 +365,9 @@
                        .colorAccessor(function(d, i){return i%4;})
                        .on("filtered", getFiltersValues);
 
-                cf.poptype = cf.dimension(function(d) { return d.poptype; });
+                cf.poptype = cf.dimension(function(d) { return d.LocationType; });
                 var poptype = cf.poptype.group();
-                var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.Value;} );
+                var poptypeByTotal = cf.poptype.group().reduceSum(function (d) { return d.No;} );
                    poptype_chart.width(100).height(100)
                        .dimension(cf.poptype)
                        .group(poptypeByTotal)
@@ -383,9 +381,9 @@
                        .colorAccessor(function(d, i){return i%4;})
                        .on("filtered", getFiltersValues);
 
-                cf.funded = cf.dimension(function(d) { return d.Fundedby; });
+                cf.funded = cf.dimension(function(d) { return d.Status; });
                 var funded = cf.funded.group();
-                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.Value;} );
+                var fundedByTotal = cf.funded.group().reduceSum(function (d) { return d.No;} );
                    funded_chart.width(400).height(175)
                        .dimension(cf.funded)
                        .group(fundedByTotal)
@@ -425,9 +423,9 @@
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
 
-                cf.appeal = cf.dimension(function(d) { return d.appeal; });
+                cf.appeal = cf.dimension(function(d) { return d.Implementation; });
                 var appeal = cf.appeal.group();
-                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.Value;} );
+                var appealByTotal = cf.appeal.group().reduceSum(function (d) { return d.No;} );
                    appeal_chart.width(400).height(130)
                        .dimension(cf.appeal)
                        .group(appealByTotal)
@@ -457,7 +455,7 @@
 
                 cf.partner = cf.dimension(function(d) { return d.Partner; });
                 var partner = cf.partner.group();
-                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.Value;} );
+                var partnerByTotal = cf.partner.group().reduceSum(function (d) { return d.No;} );
                    partner_chart.width(400).height(570)
                        .dimension(cf.partner)
                        .group(partnerByTotal)
@@ -468,44 +466,6 @@
                        .colorDomain([0,0])
                        .colorAccessor(function(d, i){return 1;})
                        .xAxis().ticks(4).tickFormat(d3.format("s"));
-
-                cf.month = cf.dimension(function (d) {return d.dd;});
-                var month = cf.month.group();
-                var monthByTotal = cf.month.group().reduceSum(function (d) { return d.Value;} );
-                var boys=cf.month.group().reduceSum(function(d) {if (d.Gender=="Boys") {return d.Value;}else{return 0;}});
-                var girls=cf.month.group().reduceSum(function(d) {if (d.Gender=="Girls") {return d.Value;}else{return 0;}});
-                var men=cf.month.group().reduceSum(function(d) {if (d.Gender=="Men") {return d.Value;}else{return 0;}});
-                var women=cf.month.group().reduceSum(function(d) {if (d.Gender=="Women") {return d.Value;}else{return 0;}});
-
-                   month_chart.width(900).height(230)
-                       .transitionDuration(1000)
-                       .margins({top: 30, right: 50, bottom: 25, left: 60})
-                       .dimension(cf.month)
-                       .mouseZoomable(true)
-                       .rangeChart(monthrange_chart)
-                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
-                       .xUnits(d3.time.months)
-                  //.elasticY(true)
-                       .renderHorizontalGridLines(true)
-                       .legend(dc.legend().x(700).y(10).itemHeight(13).gap(5))
-                       .brushOn(false)
-                        .group(boys, 'Boys')
-                        .stack(girls, 'Girls')
-                        .stack(men, 'Men')
-                        .stack(women, 'Women')
-                       .renderArea(false);
-
-                   monthrange_chart.width(900)
-                       .height(40)
-                       .margins({top: 0, right: 50, bottom: 20, left: 60})
-                       .dimension(cf.month)
-                       .group(monthByTotal)
-                       .colors(['#febd3b'])
-                       .gap(1)
-                       .x(d3.time.scale().domain([new Date(2016, 0, 1), new Date(2016, 11, 31)]))
-                       .xUnits(d3.time.months)
-                       .yAxis().ticks(0);
-
 
                 // Now create the buble chart for all region
                 cf.region = cf.dimension(function(d) { return d.Governorate; });
